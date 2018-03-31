@@ -80,8 +80,7 @@ RUN \
 
 WORKDIR /app
 
-RUN pipenv install --python 3.6 --dev
-
+RUN pipenv install --python 3.6 --dev -e .
 RUN \
     apt-get remove -y \
         build-essential \
@@ -97,4 +96,4 @@ RUN \
         /usr/include \
         /usr/local/include
 
-EXPOSE ${HTTP_SERVER_PORT}
+EXPOSE "${HTTP_SERVER_PORT}"
